@@ -47,7 +47,6 @@ function renderRandomMeals(meals) {
 
 function renderMealsByCountry(countries) {
     const container = document.querySelector('#categories-by-country .country-container');
-    container.innerHTML = '<h2>by Country</h2>';
 
     countries.forEach((country) => {
         const section = document.createElement('div');
@@ -80,7 +79,6 @@ function renderMealsByCountry(countries) {
 
 function renderMealsByCategory(categories) {
     const container = document.querySelector('#categories .categories-container');
-    container.innerHTML = '<h2>by Category</h2>';
 
     categories.forEach((category) => {
         const section = document.createElement('div');

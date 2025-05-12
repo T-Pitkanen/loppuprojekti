@@ -186,7 +186,20 @@ nav .nav-container a:hover {
 }
 
 /* Categories */
+
+.categories-intro{
+  width: 60%;
+  padding: 5vh 0;
+}
+
+
+.categories-intro h2{
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
 .categories {
+  
   background-color: #fff;
 }
 
@@ -262,11 +275,17 @@ nav .nav-container a:hover {
 }
 
 
-
-
-
-
 /* Country */
+
+.country-intro{
+  width: 60%;
+  padding: 5vh 0;
+}
+
+.country-intro h2{
+  font-size: 2em;
+  margin-bottom: 1em;
+}
 
 .country-container{
   display: flex;
