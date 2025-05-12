@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Combi */
+.categories-container h2, .recipes-container h2, .country-container h2 {
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Nav */
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  z-index: 1000;
+}
+
+nav .nav-container a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1em;
+  letter-spacing: 1px;
+  margin: 0 15px;
+  font-weight: 600;
+}
+
+nav .nav-container a:hover {
+  color: #919191;
+  transition: 0.35s ease-in-out;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero-img {
+  width: 100%;
+  max-height: 50vh;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 40px;
+  border-radius: 10px;
+  color: #252525;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #333;
+  color: #fff;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #555;
+  transition: 0.3s ease-in-out;
+}
+
+/* Categories */
+.categories {
+  padding: 1em 15em;
+  background-color: #fff;
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px; 
+  flex-wrap: wrap; 
+}
+
+.category-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em; 
+}
+
+.category-section h3{
+  font-size: 2em;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.category-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.category-card h3 {
+  font-size: 25px;
+  margin: 10px 0;
+  color: #333;
+}
+
+
+/* Meals */
+.meals-container {
+  display: flex;
+  justify-content: center;
+  gap: 2em; 
+}
+
+
+
+.meal-card{
+  width: 100%;
+  
+}
+
+.meal-card img{
+  width: 250px;
+  border-radius: 10px;
+
+}
+
+
+.meal-card a{
+  width: auto;
+  color: #333;
+  text-decoration: none;
+}
+
+
+
+/* Recipes */
+.recipes {
+  padding: 1em 15em;
+  background-color: #f9f9f9;
+}
+
+
+.recipes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.recipe-card {
+  width: 250px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  overflow: hidden;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.recipe-card h3 {
+  font-size: 20px;
+  margin: 15px 0 10px;
+  color: #333;
+}
+
+.recipe-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.recipe-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.recipe-card a:hover h3 {
+  color: #555;
+  transition: 0.3s ease-in-out;
+}
+
+
+/* Country */
+
+.country-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3em; 
+}
