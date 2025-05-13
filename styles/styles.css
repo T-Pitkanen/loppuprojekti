@@ -39,15 +39,15 @@ nav {
 
 nav .nav-container a {
   text-decoration: none;
-  color: #333;
-  font-size: 1em;
+  color: #464646;
+  font-size: 1.25em;
   letter-spacing: 1px;
   margin: 0 15px;
   font-weight: 600;
 }
 
 nav .nav-container a:hover {
-  color: #919191;
+  color: #e5533f;
   transition: 0.35s ease-in-out;
 }
 
@@ -61,6 +61,7 @@ nav .nav-container a:hover {
   width: 100%;
   max-height: 50vh;
   object-fit: cover;
+  object-position: 0 -550px;
 }
 
 .hero-text {
@@ -245,6 +246,25 @@ nav .nav-container a:hover {
   color: #333;
 }
 
+ .categories-btn button{
+  background-color: #ff6347;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: auto;
+  margin-top: 5vh;
+  
+ }
+
+ .categories-btn a{
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: 1px;
+  margin-top: 5vh;
+ }
 
 /* Meals */
 .meals-container {
@@ -353,7 +373,7 @@ footer {
   padding: 50px;
   font-weight: bolder;
   text-align: center;
-  background-image: url("../footer.jpg");
+  background-image: url("../img/footer.jpg");
 }
 
 .footer-container{

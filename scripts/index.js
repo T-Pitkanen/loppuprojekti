@@ -7,6 +7,9 @@ const endpoints = {
         { name: 'Italian', url: 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian' },
         { name: 'Mexican', url: 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Mexican' },
         { name: 'American', url: 'https://www.themealdb.com/api/json/v1/1/filter.php?a=American' },
+        { name: 'Indian', url: 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Indian' },
+        { name: 'Chinese', url: 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Chinese' },
+ 
     ],
     categories: [
         { name: 'Chicken', url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Chicken' },
@@ -32,7 +35,7 @@ function renderRandomMeals(meals) {
         const card = document.createElement('div');
         card.classList.add('meal-card');
         card.innerHTML = `
-            <a href="recipe.html?id=${meal.idMeal}">
+            <a href="pages/recipe.html?id=${meal.idMeal}">
                 <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
                 <p>${meal.strMeal}</p>
             </a>
@@ -63,7 +66,7 @@ function renderMealsByCountry(countries) {
             const card = document.createElement('div');
             card.classList.add('meal-card');
             card.innerHTML = `
-                <a href="recipe.html?id=${meal.idMeal}">
+                <a href="pages/recipe.html?id=${meal.idMeal}">
                     <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
                     <p>${meal.strMeal}</p>
                 </a>
@@ -95,7 +98,7 @@ function renderMealsByCategory(categories) {
             const card = document.createElement('div');
             card.classList.add('meal-card');
             card.innerHTML = `
-                <a href="recipe.html?id=${meal.idMeal}">
+                <a href="pages/recipe.html?id=${meal.idMeal}">
                     <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
                     <p>${meal.strMeal}</p>
                 </a>
