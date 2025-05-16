@@ -1,6 +1,6 @@
 // API
 
-//loin endpoint const jotta voidaan fetchata samanaikaisesti useista endpointeista
+//loin endpoint objektin jotta voidaan fetchata samanaikaisesti useista endpointeista
 const endpoints = {
   random: "https://www.themealdb.com/api/json/v1/1/random.php",
   countries: [
@@ -43,22 +43,29 @@ const endpoints = {
 
 // discover kohdan renderöinti johon halusin 5 randomia reseptiä
 function renderRandomMeals(meals) {
-  // sisällön luonti
+
+  // container discover resepteille
   const container = document.querySelector(".recipes-container");
 
+  // luodaan jokaiselle reseptille oma section
   const section = document.createElement("div");
   section.classList.add("category-section");
 
+  // title jokaiselle reseptille
   const sectionTitle = document.createElement("h3");
   section.appendChild(sectionTitle);
 
+  // toinen container
   const mealsContainer = document.createElement("div");
   mealsContainer.classList.add("meals-container");
 
-  // loopataan reseptien läpi ja luodaan jokaiselle card temnplate
+  // loopataan reseptien läpi ja luodaan jokaiselle card temnplate ja täytetään se APIsta saatavilla tiedoilla
   meals.forEach((meal) => {
+    //luodaan card
     const card = document.createElement("div");
+    // annetaan sille meal-card class
     card.classList.add("meal-card");
+
     card.innerHTML = `
             <a href="pages/recipe.html?id=${meal.idMeal}">
                 <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
@@ -83,20 +90,25 @@ function renderMealsByCountry(countries) {
 
   // looppaus
   countries.forEach((country) => {
+
+    // luodaan jokaiselle maalle oma section
     const section = document.createElement("div");
     section.classList.add("category-section");
 
+
+    // jokaisen maan otsikko
     const sectionTitle = document.createElement("h3");
     sectionTitle.textContent = country.name;
     section.appendChild(sectionTitle);
 
+    //container resepteille
     const mealsContainer = document.createElement("div");
     mealsContainer.classList.add("meals-container");
 
     // looppaus ja valitaan 5 reseptiä
     country.meals.slice(0, 5).forEach((meal) => {
       const card = document.createElement("div");
-      // lisätään meal-card class jokaiselle
+      // lisätään meal-card class
       card.classList.add("meal-card");
       card.innerHTML = `
                 <a href="pages/recipe.html?id=${meal.idMeal}">
@@ -119,13 +131,17 @@ function renderMealsByCategory(categories) {
 
   //looppaus
   categories.forEach((category) => {
+
+    // luodaan jokaiselle kategoriolle oma section
     const section = document.createElement("div");
     section.classList.add("category-section");
 
+    // jokaisen kategorian otsikko
     const categoryTitle = document.createElement("h3");
     categoryTitle.textContent = category.name;
     section.appendChild(categoryTitle);
 
+    //container resepteille
     const mealsContainer = document.createElement("div");
     mealsContainer.classList.add("meals-container");
     // looppaus ja valitaan 5 reseptiä
@@ -150,6 +166,7 @@ function renderMealsByCategory(categories) {
 //  haetaan data endpointista ja renderöidään se
 // 5 satunnaista reseptiä, maat ja kategoriat
 //async await funktio koska halutaan saada kaikki samanaikaisesti
+//promise odottaa että kaikki on ladattu ennenkuin renderöidään
 async function fetchAndDisplayData() {
   try {
     //random
