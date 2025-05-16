@@ -25,6 +25,7 @@ function renderRecipes(recipes) {
   const categoryName = document.querySelector('#category-name');
   categoryName.textContent = category || country;
 
+
   container.innerHTML = recipes
     .map(
       (recipe) => `

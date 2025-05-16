@@ -1,29 +1,32 @@
-// otetaan URL:sta reseptin id ja tallennetaan se
+// otetaan URL:sta reseptin id
 const urlParams = new URLSearchParams(window.location.search);
-const recipeId = urlParams.get('id');
+const recipeId = urlParams.get("id");
 
 // fetchataan resepti kyseisen id:n avulla
 function fetchRecipeDetails(id) {
-	fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-		.then((res) => {
-			if (!res.ok) {
-				throw new Error('Failed to fetch recipe details');
-			}
-			return res.json();
-		})
-		.then((data) => {
-			// array jossa on meidä resepti
-			const recipe = data.meals[0];
-			// resepti renderöidään
-			renderRecipeDetails(recipe);
-		})
-		.catch((error) => console.error('Error fetching recipe details:', error));
+  fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Failed to fetch recipe details");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      // array jossa on meidä resepti
+      const recipe = data.meals[0];
+      // resepti renderöidään
+      renderRecipeDetails(recipe);
+    })
+    // perus virheiden käsittely
+    .catch((error) => console.error("Error fetching recipe details:", error));
 }
 
 // renderöidään kyseisen reseptin tiedot
 function renderRecipeDetails(recipe) {
-	const recipeContainer = document.querySelector('.recipe-container');
-	recipeContainer.innerHTML = `
+  // innerHTML menee tänne recipe containeriin
+  const recipeContainer = document.querySelector(".recipe-container");
+  // recipecontainer sisältö
+  recipeContainer.innerHTML = `
         <h3>${recipe.strMeal}</h3>
         <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />
         <p><strong>Category:</strong> ${recipe.strCategory}</p>
@@ -31,20 +34,20 @@ function renderRecipeDetails(recipe) {
         <p><strong>Instructions:</strong> ${recipe.strInstructions}</p>
         <h4>Ingredients:</h4>
         <ul>
+
+		
             ${Object.keys(recipe)
-							.filter((key) => key.startsWith('strIngredient') && recipe[key])
-							.map(
-								(key) =>
-									`<li>${recipe[key]} - ${
-										recipe[`strMeasure${key.slice(13)}`]
-									}</li>`
-							)
-							.join('')}
+              .filter((key) => key.startsWith("strIngredient") && recipe[key])
+              .map(
+                (key) =>
+                  `<li>${recipe[key]} - ${
+                    recipe[`strMeasure${key.slice(13)}`]
+                  }</li>`
+              )
+              .join("")}
         </ul>
     `;
 }
 
-// fetch & display
-if (recipeId) {
-	fetchRecipeDetails(recipeId);
-}
+// lopuksi funktion kutsu
+fetchRecipeDetails(recipeId);

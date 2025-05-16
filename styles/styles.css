@@ -16,13 +16,25 @@ body {
 }
 
 /* Combi */
-.categories-container h2, .recipes-container h2, .country-container h2 {
+.categories-container h2,
+.recipes-container h2,
+.country-container h2 {
   font-size: 2em;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.categories, .about, .recipes, .country, .about {
+.categories h2, .recipes h2, .country h2 {
+  font-size: 1.75em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.categories,
+.about,
+.recipes,
+.country,
+.about {
   padding: 3em 15em;
 }
 
@@ -85,17 +97,16 @@ nav .nav-container a:hover {
   margin-bottom: 20px;
 }
 
-
 /* Recipes */
 .recipes {
   background-color: #fff;
 }
 
-
 .recipes-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -137,7 +148,6 @@ nav .nav-container a:hover {
   transition: 0.3s ease-in-out;
 }
 
-
 /* About */
 .about {
   display: flex;
@@ -158,13 +168,12 @@ nav .nav-container a:hover {
   border-radius: 8px;
 }
 
-.about-image{
+.about-image {
   position: relative;
   width: 100%;
   height: 100%;
   z-index: -1;
 }
-
 
 .about img {
   width: 100%;
@@ -182,24 +191,21 @@ nav .nav-container a:hover {
   cursor: pointer;
   font-size: 16px;
   width: 70%;
-
 }
 
 /* Categories */
 
-.categories-intro{
+.categories-intro {
   width: 60%;
   padding: 5vh 0;
 }
 
-
-.categories-intro h2{
+.categories-intro h2 {
   font-size: 2em;
   margin-bottom: 1em;
 }
 
 .categories {
-  
   background-color: #fff;
 }
 
@@ -207,17 +213,17 @@ nav .nav-container a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px; 
-  flex-wrap: wrap; 
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .category-section {
   display: flex;
   flex-direction: column;
-  gap: 2em; 
+  gap: 2em;
 }
 
-.category-section h3{
+.category-section h3 {
   font-size: 2em;
 }
 
@@ -246,7 +252,7 @@ nav .nav-container a:hover {
   color: #333;
 }
 
- .categories-btn button{
+.categories-btn button {
   background-color: #ff6347;
   color: #fff;
   padding: 10px 15px;
@@ -256,38 +262,32 @@ nav .nav-container a:hover {
   font-size: 16px;
   width: auto;
   margin-top: 5vh;
-  
- }
+}
 
- .categories-btn a{
+.categories-btn a {
   text-decoration: none;
   color: inherit;
   letter-spacing: 1px;
   margin-top: 5vh;
- }
+}
 
 /* Meals */
 .meals-container {
   display: flex;
   justify-content: center;
-  gap: 2em; 
+  gap: 2em;
 }
 
-
-
-.meal-card{
+.meal-card {
   width: 100%;
-  
 }
 
-.meal-card img{
+.meal-card img {
   width: 250px;
   border-radius: 10px;
-
 }
 
-
-.meal-card a{
+.meal-card a {
   width: auto;
   color: #3d3d3d;
   text-decoration: none;
@@ -295,26 +295,24 @@ nav .nav-container a:hover {
   letter-spacing: 1px;
 }
 
-
 /* Country */
 
-.country-intro{
+.country-intro {
   width: 60%;
   padding: 5vh 0;
 }
 
-.country-intro h2{
+.country-intro h2 {
   font-size: 2em;
   margin-bottom: 1em;
 }
 
-.country-container{
+.country-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 3em; 
+  gap: 3em;
 }
-
 
 /* Newsletter */
 .newsletter {
@@ -345,7 +343,7 @@ nav .nav-container a:hover {
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 300px;
+  width: 30%;
 }
 
 .newsletter-form button {
@@ -362,8 +360,6 @@ nav .nav-container a:hover {
   background-color: #e5533f;
 }
 
-
-
 /* Footer */
 
 footer {
@@ -376,7 +372,7 @@ footer {
   background-image: url("../img/footer.jpg");
 }
 
-.footer-container{
+.footer-container {
   display: flex;
   flex-direction: column;
   gap: 1.75em;
@@ -390,7 +386,175 @@ footer {
   gap: 1em;
 }
 
-footer a{
+footer a {
   text-decoration: none;
-  color: inherit
+  color: inherit;
+}
+
+ /*************************************** RESPONSIVE *************************************/
+
+@media (max-width: 480px) {
+  body {
+    gap: 3rem;
+  }
+
+  .categories,
+  .about,
+  .recipes,
+  .country,
+  .about {
+    padding: 1em 0.5em;
+  }
+
+  nav {
+    padding: 10px;
+  }
+
+  nav .nav-container a {
+    font-size: 1em;
+    margin: 0 7px;
+  }
+
+  .hero-img {
+    height: 80vh;
+    object-position: center;
+  }
+
+  .hero-text {
+    margin-top: 5VH;
+    padding: 0px;
+    width: 70%;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5em;
+  }
+
+  .hero-text p {
+    font-size: 1em;
+  }
+
+  .recipes-container,
+  .categories-container,
+  .country-container {
+    flex-direction: column;
+    gap: 3em;
+   
+  }
+
+  .meals-container {
+    flex-direction: column;
+  }
+
+  .recipe-card,
+  .category-card,
+  .meal-card {
+    width: 95% !important;
+    min-width: unset;
+    margin: 0 auto;
+  }
+
+  .recipe-card img,
+  .category-card img,
+  .meal-card img {
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .about {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .about-container {
+    width: 80%;
+    padding: 0.5em;
+    gap: 1em;
+  }
+
+  .about-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about img {
+    height: 25vh;
+    width: 80%;
+  }
+
+  .about-container button {
+    width: 100%;
+    font-size: 1em;
+    padding: 8px 10px;
+  }
+
+  .categories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .categories-intro,
+  .country-intro {
+    width: 80%;
+    padding: 2vh 0;
+  }
+
+  .categories-container, .country-container{
+    width: 80%;
+  }
+
+  .category-section{
+    gap: 0em;
+  }
+
+  .categories-intro h2,
+  .country-intro h2 {
+    font-size: 1.2em;
+  }
+
+  .newsletter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .newsletter-container {
+    width: 80%;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .newsletter-form input {
+    font-size: 1em;
+    width: 100%;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  footer {
+    padding: 30px;
+    font-size: 0.9em;
+    background-size: cover;
+  }
+
+  .footer-container {
+    gap: 1em;
+  }
+
+  .social-media {
+    font-size: 1.2em;
+    gap: 0.5em;
+  }
 }
