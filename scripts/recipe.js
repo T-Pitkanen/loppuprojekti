@@ -17,7 +17,7 @@ function fetchRecipeDetails(id) {
       // resepti renderöidään
       renderRecipeDetails(recipe);
     })
-    // perus virheiden käsittely
+    // perus virheidenkäsittely
     .catch((error) => console.error("Error fetching recipe details:", error));
 }
 
@@ -26,6 +26,9 @@ function renderRecipeDetails(recipe) {
   // innerHTML menee tänne recipe containeriin
   const recipeContainer = document.querySelector(".recipe-container");
   // recipecontainer sisältö
+
+  //ainesosa kohdassa käydään läpi recipe objektin avaimet
+  //sen  jälkeen suodatetaan vain ne avaimet jotka alkavat strIngredient esim. Chicken
   recipeContainer.innerHTML = `
         <h3>${recipe.strMeal}</h3>
         <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />
@@ -35,7 +38,7 @@ function renderRecipeDetails(recipe) {
         <h4>Ingredients:</h4>
         <ul>
 
-		
+
             ${Object.keys(recipe)
               .filter((key) => key.startsWith("strIngredient") && recipe[key])
               .map(

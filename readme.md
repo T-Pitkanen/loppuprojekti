@@ -1,16 +1,40 @@
-https://www.themealdb.com/api.php
+# MealDB Reseptisovellus
 
-index.js
-Alustavasti käytin https://www.geeksforgeeks.org/javascript-fetch-method/ fetch templatea mutta ongelmaksi tuli, kun halusin hakea monesta eri endpointista ja en halunnut käyttää samaa templatea monta kertaa toistuvasti. Käytin tekoälyä kysyäkseni miten saan monta endpointia haettua saman aikaisesti ja vastaukseksi sain Promise.all ja endpointtien mappaus jota käytin lopullisessa koodissa. Löysin siitä vielä tämän linkin jonka kävin myös läpi: https://www.geeksforgeeks.org/how-to-fetch-an-array-of-urls-with-promise-all/  ja myös: https://rapidapi.com/guides/fetch-data-multiple-apis-with-fetch
+Tämä projekti käyttää [TheMealDB API:a](https://www.themealdb.com/api.php) hakemaan ja näyttämään reseptejä kategorioittain ja maittain, sekä tarkastella yksittäin reseptien tietoja.
+---
 
-recipe.js
-Halusin että käyttäjä voisi klikata reseptiä ja se veisi kyseiselle reseptin sivulle. Tiesin että sen saa tehtyä käyttämällä urlSearchParams, jotta voin saada receptin ID:n urlista ja näin tehdä uuden fetch haun kyseisellä ID:llä, joka vie minut halutulle resepti sivulle. Otin mallia : https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/get. Mallissa käytetään (document.location.search), mutta sain selville että minun pitää käyttää (window.location.search), koska olen selainympäristössä.
-Tein uuden API Fetchin käyttämällä tallennettua ID:tä ja renderöin reseptin tiedot niin kuin index.html sivulla käyttäen index.js mallina. En kuitenkaan saanut aluksi ainesosa luetteloa toimimaan/näkymään joten käytin siinä tekoälyä.
+## 📁 
 
+### `index.js`
 
-category.js
-Tein myös sivun missä on näkyvissä kaikki kategoriat ja reseptit maiden perusteella. Otin mallia index.js mutta muutin tarvittavat esim url, innerhtml yms... 
+Aluksi käytin fetch-menetelmän mallipohjaa [täältä](https://www.geeksforgeeks.org/javascript-fetch-method/), mutta halusin hakea tietoa useista eri endpointeista samanaikaisesti, enkä halunnut kopioida samaa koodia useaan kertaan.
 
-käytin tätä apuna: https://rapidapi.com/guides/fetch-data-multiple-apis-with-fetch
+Kysyin tekoälyltä, kuinka voisin hakea useista endpointeista samanaikaisesti ja myöhemmin löysin myös sivun mistä pystyin itsekkin siitä paremmin lukemaan.
+
+Käytin näitä lähteitä:
+- [geeksforgeeks](https://www.geeksforgeeks.org/how-to-fetch-an-array-of-urls-with-promise-all/)
+- [RapidAPI](https://rapidapi.com/guides/fetch-data-multiple-apis-with-fetch)
+- [digitalocean](https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data)
+
+---
+
+### `recipe.js`
+
+Halusin, että käyttäjä voi klikata reseptiä ja siirtyä kyseisen reseptin omaan sivuun. Tiesin, että tämän voi tehdä `URLSearchParams`-toiminnolla hakemalla reseptin ID:n URL-osoitteesta ja tekemällä uuden fetch-haun kyseisellä ID:llä.
+
+Seurasin mallia [MDN:n dokumentaatiosta](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/get). Esimerkissä käytettiin `document.location.search`, mutta huomasin, että selainympäristössä oikeampi vaihtoehto on `window.location.search`.
+
+Loin uuden API-haun tallennetulla ID:llä ja renderöin reseptin tiedot samalla tavalla kuin `index.js`-tiedostossa. Ainesosalistan näyttäminen ei ollutkaan niin helppoa kuin luulin, joten käytin tekoälyä ongelman ratkaisuun.
+
+---
+
+### `category.js` & `categories.js`
+
+Loin myös sivun, jossa näkyvät kaikki reseptikategoriat ja kategoriaa klikkaamalla, tulee uusi sivu, jolloin nähdään kaikki reseptit tästä kategoriasta . Käytin pohjana `index.js`- ja `recipe.js`-tiedoistoissa käyttämääni koodia , mutta muutin tarvittavat kohdat, kuten URL-osoitteet, `innerHTML` ja muita käyttöliittymän elementtejä.
+
+Lähteitä:
+- [RapidAPI](https://rapidapi.com/guides/fetch-data-multiple-apis-with-fetch)
+
+---
 
 

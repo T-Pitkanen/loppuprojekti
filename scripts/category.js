@@ -1,11 +1,8 @@
 const urlParams = new URLSearchParams(window.location.search);
 const category = urlParams.get('category');
-const country = urlParams.get('country');
 
-function fetchRecipesByCategoryOrCountry() {
-  const endpoint = category
-    ? `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
-    : `https://www.themealdb.com/api/json/v1/1/filter.php?a=${country}`;
+function fetchRecipesByCategory() {
+  const endpoint = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
 
   fetch(endpoint)
     .then((res) => {
@@ -23,8 +20,7 @@ function fetchRecipesByCategoryOrCountry() {
 function renderRecipes(recipes) {
   const container = document.querySelector('.recipes-container');
   const categoryName = document.querySelector('#category-name');
-  categoryName.textContent = category || country;
-
+  categoryName.textContent = category;
 
   container.innerHTML = recipes
     .map(
@@ -40,4 +36,4 @@ function renderRecipes(recipes) {
     .join('');
 }
 
-fetchRecipesByCategoryOrCountry();
+fetchRecipesByCategory();

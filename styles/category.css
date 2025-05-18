@@ -1,5 +1,5 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
@@ -7,7 +7,9 @@ body {
   line-height: 1.6;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   color: #ff6347;
 }
 
@@ -20,8 +22,6 @@ a:hover {
   color: #e5533f;
 }
 
-
-
 /* Nav */
 nav {
   width: 100%;
@@ -29,7 +29,6 @@ nav {
   text-align: center;
   z-index: 1000;
   background-image: url("../img/bg.jpg");
-  
 }
 
 nav .nav-container a {
@@ -48,53 +47,45 @@ nav .nav-container a:hover {
 
 /* Categories */
 
-
-
-.category-container{
-    margin-top: 15vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
+.category-container {
+  margin-top: 15vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
 }
 
-.categories-info{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+.categories-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
-
-
-.recipes-container{
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 3em;
-
+.recipes-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3em;
 }
-
-
 
 /* Card */
 
-.recipe-card{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    width: 300px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
-
-
-.recipe-card img{
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+.recipe-card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
