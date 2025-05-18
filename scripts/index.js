@@ -115,7 +115,7 @@ function renderMealsByCountry(countries) {
       // lisätään meal-card class
       card.classList.add("meal-card");
       card.innerHTML = `
-                <a href="pages/recipe.html?id=${meal.idMeal}">
+                <a href="/pages/recipe.html?id=${meal.idMeal}">
                     <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
                     <p>${meal.strMeal}</p>
                 </a>
@@ -156,7 +156,7 @@ function renderMealsByCategory(categories) {
       // lisätään meal-card class jokaiselle
       card.classList.add("meal-card");
       card.innerHTML = `
-                <a href="pages/recipe.html?id=${meal.idMeal}">
+                <a href="/pages/recipe.html?id=${meal.idMeal}">
                     <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
                     <p>${meal.strMeal}</p>
                 </a>
