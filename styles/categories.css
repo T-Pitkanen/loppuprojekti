@@ -69,13 +69,13 @@ nav .nav-container a:hover {
   justify-content: center;
   flex-direction: column;
   gap: 3em;
-  width: 80%;
+  width: 60%;
 }
 
 .categories-container {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 3em;

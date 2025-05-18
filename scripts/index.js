@@ -1,5 +1,3 @@
-// API
-
 //loin endpoint objektin jotta voidaan fetchata samanaikaisesti useista endpointeista
 const endpoints = {
   random: "https://www.themealdb.com/api/json/v1/1/random.php",
@@ -41,6 +39,8 @@ const endpoints = {
   ],
 };
 
+
+
 // discover kohdan renderöinti johon halusin 5 randomia reseptiä
 function renderRandomMeals(meals) {
 
@@ -81,6 +81,10 @@ function renderRandomMeals(meals) {
   container.appendChild(section);
 }
 
+
+
+
+
 // reseptit maittain
 function renderMealsByCountry(countries) {
   //sisältö
@@ -88,7 +92,7 @@ function renderMealsByCountry(countries) {
     "#categories-by-country .country-container"
   );
 
-  // looppaus
+  // looppaus 
   countries.forEach((country) => {
 
     // luodaan jokaiselle maalle oma section
@@ -144,13 +148,15 @@ function renderMealsByCategory(categories) {
     //container resepteille
     const mealsContainer = document.createElement("div");
     mealsContainer.classList.add("meals-container");
+
+
     // looppaus ja valitaan 5 reseptiä
     category.meals.slice(0, 5).forEach((meal) => {
       const card = document.createElement("div");
       // lisätään meal-card class jokaiselle
       card.classList.add("meal-card");
       card.innerHTML = `
-                <a href="recipe.html?id=${meal.idMeal}">
+                <a href="pages/recipe.html?id=${meal.idMeal}">
                     <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
                     <p>${meal.strMeal}</p>
                 </a>
@@ -165,8 +171,8 @@ function renderMealsByCategory(categories) {
 
 //  haetaan data endpointista ja renderöidään se
 // 5 satunnaista reseptiä, maat ja kategoriat
-//async await funktio koska halutaan saada kaikki samanaikaisesti
-//promise odottaa että kaikki on ladattu ennenkuin renderöidään
+// käytetään async/await koska halutaan että kaikki data on haettu ennenkuin renderöidään
+
 async function fetchAndDisplayData() {
   try {
     //random
@@ -187,6 +193,8 @@ async function fetchAndDisplayData() {
           .then((data) => ({ name: country.name, meals: data.meals }))
       )
     );
+
+
     renderMealsByCountry(countryData);
 
 
@@ -205,5 +213,7 @@ async function fetchAndDisplayData() {
     console.error("Error fetching data:", error);
   }
 }
+
+
 
 fetchAndDisplayData();

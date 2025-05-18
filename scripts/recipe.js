@@ -28,7 +28,9 @@ function renderRecipeDetails(recipe) {
   // recipecontainer sisältö
 
   //ainesosa kohdassa käydään läpi recipe objektin avaimet
-  //sen  jälkeen suodatetaan vain ne avaimet jotka alkavat strIngredient esim. Chicken
+  //sen  jälkeen suodatetaan vain ne avaimet jotka alkavat strIngredient
+  // map -> luodaan lista ainesosista ja recipe[key] antaa ainesosan nimen
+  // recipe[`strMeasure${key.slice(13)}`] taas antaa ainesosan määrän
   recipeContainer.innerHTML = `
         <h3>${recipe.strMeal}</h3>
         <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />

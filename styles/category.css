@@ -57,6 +57,13 @@ nav .nav-container a:hover {
   gap: 2em;
 }
 
+.category-container h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+}
+
 .categories-info {
   display: flex;
   flex-direction: column;
@@ -64,9 +71,9 @@ nav .nav-container a:hover {
 }
 
 .recipes-container {
-  width: 80%;
+  width: 60%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 3em;
